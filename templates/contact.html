@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Iris Flower</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+    
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<a href="index.html" id="logo"><img src="static/images/iris_logo1.png" alt="Logo"></a>
+		</div>
+		<div id="body">
+			<div id="content">
+				<h1 style="text-align:center">Iris Flower Predictor</h1>
+				<form action="{{ url_for('predict')}}"method="post">
+					<p>
+						 There are three types of Iris Flowers: Iris-setosa, Iris-versicolor and Iris-virginica. </br>
+						 Enter the details of your Iris Flower to determine its type.
+					</p>
+					<label for="name"><span>Sepal Length:</span><span>
+						<input type="text" name="sepal_length" id="name">
+						</span></label>
+					<label for="address"><span>Sepal Width:</span><span>
+						<input type="text" name="sepal_width" id="address">
+						</span></label>
+					<label for="telephone"><span>Petal Length:</span><span>
+						<input type="text" name="petal_length" id="telephone">
+						</span></label>
+					<label for="subject"><span>Petal Width:</span><span>
+						<input type="text" name="petal_width" id="subject">
+						</span></label>
+					<input type="submit" id="send" value="Predict">
+				</form>
+				{{ prediction_text }}
+			</div>
+		</div>
+			<p>
+				Garden Walkthrough &copy; 2023 | All Rights Reserved
+			</p>
+		</div>
+	</div>
+</body>
+</html>
